@@ -47,4 +47,4 @@ jobs:
         repository: ${{ github.repository }}
     - id: build-publish
       uses: bitovi/github-actions-react-to-ghp@v1.1.1
-        path: build/
+        path: dist
