@@ -45,6 +45,4 @@ jobs:
         user_email: 'github-actions[bot]@users.noreply.github.com'
         github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
         repository: ${{ github.repository }}
-    - id: build-publish
-      uses: bitovi/github-actions-react-to-ghp@v1.1.1
-        path: dist
+
