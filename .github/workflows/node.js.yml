@@ -44,3 +44,8 @@ jobs:
         user_email: 'github-actions[bot]@users.noreply.github.com'
         github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
         repository: ${{ github.repository }}
+    - name: deploy to gh-pages
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            # deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+            publish_dir: ./build 
