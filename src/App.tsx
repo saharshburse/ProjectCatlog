@@ -2,6 +2,7 @@ import React from 'react';
 
 import './App.css';
 import UploadImage from './AdminComponent/UploadImage/UploadImage';
+import LoginPage from './Components/Login_page/login-page';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
 
       </header>
       <UploadImage  />
+      <LoginPage />
     </div>
   );
 }
