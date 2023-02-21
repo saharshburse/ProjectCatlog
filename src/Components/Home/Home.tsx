@@ -1,8 +1,8 @@
 import React from 'react'
-import './Homme.css'
+import './Home.css'
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <div><h1>Home Page Here   login at /login  upload at /admin</h1>Home</div>
   )
 }

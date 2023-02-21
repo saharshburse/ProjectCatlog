@@ -1,1 +1,11 @@
 To write the workflow of the website created using React and should be maintained on a daily basis.
+
+Saharsh==>
+            1)Upload Image to storage
+            2)get back images from storage
+            3)Add auth to storage access (ongoing)
+
+Aniket ====>
+            1)create login page
+            2)redirect user to /admin page  if email='admin@email.com' and password ='admin@123'
+            3)after login save auth=boolean to local storage and timeout for 20min (try on 1 min if working)  
