@@ -1,7 +1,7 @@
 import React from 'react'
 import './UploadImage.css'
-import { useState, useEffect } from 'react';
-import config from './../../config'
+import { useState } from 'react';
+// import config from './../../config'
 
 export default function UploadImage() {
 
