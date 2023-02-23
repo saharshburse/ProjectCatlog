@@ -6,6 +6,7 @@ import LoginPage from './Components/Login_page/login-page';
 import { BrowserRouter,Route,Routes } from "react-router-dom";
 import Home from './Components/Home/Home';
 import DashBoard from './AdminComponent/DashBoard/DashBoard';
+import ImageGallery from './Components/ImageGallery/ImageGallery';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path='/' element={ <Home />}/>
         <Route path='/admin/*' element={<DashBoard  />}/>
         <Route path='/login' element={ <LoginPage />}/>
-        
+        <Route path='/Gallery' element={ <ImageGallery />}/>
       </Routes>
       
      
