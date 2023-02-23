@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './UploadImage.css'
 import { useState } from 'react';
 import { db } from "./../../firebase";
 import { uid } from "uid";
-import { set, ref, onValue, remove, update } from "firebase/database";
+import { set, ref } from "firebase/database";
 // import {cloudinary} from 'cloudinary'
 
 export default function UploadImage() {
