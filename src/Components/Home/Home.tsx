@@ -1,8 +1,20 @@
-import React from 'react'
-import './Home.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import './Home.css';
 
-export default function Home() {
+interface Props {}
+
+const Home: React.FC<Props> = () => {
   return (
-    <div><h1>Home Page Here   login at /login  upload at /admin</h1>Home</div>
-  )
-}
+    <div>
+      <Link to="/admin">
+        <button>ADMIN RENDER xD</button>
+      </Link>
+      <Link to="/login">
+        <button>LOGIN PAGE</button>
+      </Link>
+    </div>
+  );
+};
+
+export default Home;
