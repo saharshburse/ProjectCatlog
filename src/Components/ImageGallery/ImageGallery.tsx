@@ -47,7 +47,7 @@ export default function ImageGallery() {
 
     console.log(Img);
 
-  }, []);
+  }, [Img]);
 
 
 
@@ -66,7 +66,7 @@ export default function ImageGallery() {
          
           {Img.map((img,index) => {
               return (
-                img.url!=""&&
+                img.url!==""&&
                 <Card Url={img.url} Name={img.name} />
               )
             })}
