@@ -1,4 +1,7 @@
-const config ={
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+const firebaseConfig = {
 
     apiKey: "AIzaSyANbMA5O38QL5eBUGuKdH_CBbmzw-xyYa8",
     authDomain: "gallery-8bea0.firebaseapp.com",
@@ -11,4 +14,6 @@ const config ={
 
 }
 
-export default config
+
+const app = initializeApp(firebaseConfig);
+export const db = getDatabase(app);
