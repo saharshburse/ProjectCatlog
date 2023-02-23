@@ -34,10 +34,10 @@ export default function ImageGallery() {
         name:childSnapshot.val().stype
 
        }
-        setImg((Img)=>[...Img,{...arr}])
-         console.log(Img,'name',childSnapshot.val().stype);
+        setImg((pre)=>[...pre,{...arr}])
+         console.log('name',childSnapshot.val().stype);
         //  setUrl((types) => [...types, childSnapshot.val().url])
-         console.log(Img,'Url',childSnapshot.val().url);
+         console.log('Url',childSnapshot.val().url);
       });
 
 
@@ -45,9 +45,9 @@ export default function ImageGallery() {
       onlyOnce: true
     });
 
-    console.log(Img);
+    // console.log(Img);
 
-  }, [Img]);
+  }, []);
 
 
 
