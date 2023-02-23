@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import UploadImage from './AdminComponent/UploadImage/UploadImage';
+// import UploadImage from './AdminComponent/UploadImage/UploadImage';
 import LoginPage from './Components/Login_page/login-page';
 import { BrowserRouter,Route,Routes } from "react-router-dom";
 import Home from './Components/Home/Home';

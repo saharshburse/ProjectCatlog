@@ -11,9 +11,10 @@ export default function UploadImage() {
 
  
     const [image,setImage]=useState<File | string>("")
-    const [types,setType]=useState(["Main Door","Mica Door","CNC Groove"])
+    const [types,setType]=useState<string[]>([])
     const [stype,setStype]=useState("")
-
+    const arr=["Main Door","Mica Door","CNC Groove"];
+    setType(arr);
     const uuid = uid();
     // const [uploadres,setUploadres]=useState({})
     // const [imgUrl,setImgurl]=useState("")
