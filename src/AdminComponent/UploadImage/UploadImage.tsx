@@ -11,6 +11,9 @@ export default function UploadImage() {
 
  
     const [image,setImage]=useState<File | string>("")
+    const [types,setType]=useState(["Main Door","Mica Door","CNC Groove"])
+    const [stype,setStype]=useState("")
+
     const uuid = uid();
     // const [uploadres,setUploadres]=useState({})
     // const [imgUrl,setImgurl]=useState("")
@@ -22,7 +25,7 @@ export default function UploadImage() {
       data.append("file",image)
       data.append("upload_preset","my_preset")
       data.append("cloud_name","dldfmckou")
-      data.append("public_id",`Main Door/${uuid}`)
+      data.append("public_id",`${stype}/${uuid}`)
       // data.append("asset_folder","Main Door")
 
 
@@ -56,10 +59,12 @@ export default function UploadImage() {
   // };
     //write
     const writeToDatabase = (url:string) => {
+
       
       set(ref(db, `Image/${uuid}`), {
         url,
         uuid,
+        stype
       });
   
       // setImgurl("");
@@ -78,6 +83,18 @@ export default function UploadImage() {
         <div className='uploadContainer'>
           <div className='uploadBox'>
             <input type="file"  onChange={ (e) =>  setImage(e.target.files![0]) } />
+            <label>Type</label>
+            <select name="" id="" defaultValue="select"  onChange={(e)=>{setStype(e.target.value) }} >
+              <option value="select" disabled>select</option>
+            {types.map((type, index) => {
+                                return (
+                                  <option key={index} value={type}>{type}</option>
+                                       )
+                            })}
+
+
+              
+            </select>
             <button onClick={submitImage }>Upload</button>
 
           </div>
