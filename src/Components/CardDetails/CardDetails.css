@@ -1,0 +1,14 @@
+.Listcard{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: bisque;
+    padding: 1em;
+    cursor: pointer;
+    text-decoration: none;
+}

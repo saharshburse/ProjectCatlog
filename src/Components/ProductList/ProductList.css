@@ -1,0 +1,24 @@
+.listmain{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.listdiv{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 60%;
+    gap: 30px;
+}
+
+/* ================  Try to use something else */
+a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+}/* ================  Try to use something else */

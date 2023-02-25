@@ -7,6 +7,7 @@ import { BrowserRouter,Route,Routes } from "react-router-dom";
 import Home from './Components/Home/Home';
 import DashBoard from './AdminComponent/DashBoard/DashBoard';
 import ImageGallery from './Components/ImageGallery/ImageGallery';
+import ProductList from './Components/ProductList/ProductList';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/admin/*' element={<DashBoard  />}/>
         <Route path='/login' element={ <LoginPage />}/>
         <Route path='/Gallery' element={ <ImageGallery />}/>
+        <Route path='/List' element={ <ProductList />}/>
       </Routes>
       
      

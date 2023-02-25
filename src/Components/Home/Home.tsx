@@ -16,6 +16,9 @@ const Home: React.FC<Props> = () => {
       <Link to="/Gallery">
         <button>Gallery</button>
       </Link>
+      <Link to="/List">
+        <button>List</button>
+      </Link>
     </div>
   );
 };
