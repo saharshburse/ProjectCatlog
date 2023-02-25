@@ -56,7 +56,7 @@ export default function ImageGallery() {
 
     // console.log(Img);
 
-  }, []);
+  }, [id]);
 
 
 
