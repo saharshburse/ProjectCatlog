@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './ImageGallery.css'
 import Card from '../Card/Card'
 import { db } from "./../../firebase";
-import { equalTo, get, onValue, orderByChild, query, ref } from 'firebase/database';
+import { equalTo, onValue, orderByChild, query, ref } from 'firebase/database';
 import { useParams } from 'react-router-dom';
 
 export default function ImageGallery() {
@@ -14,8 +14,8 @@ export default function ImageGallery() {
     url:"",
     name:"",
   }])
-  const dbRef = ref(db, '/Image');
-  const imgBytype = query(dbRef, orderByChild('stype'),equalTo(id+""));
+ 
+
   
   
    
@@ -25,10 +25,10 @@ export default function ImageGallery() {
 
   //read
   useEffect(() => {
+    const dbRef = ref(db, '/Image');
 
-
-   
-    console.log("image by type",imgBytype)
+    const imgBytype = query(dbRef, orderByChild('stype'),equalTo(id+""));
+    // console.log("image by type",imgBytype)
      
     // console.log("current id",currentID)
     // console.log("usersnapshot",snapshot)
