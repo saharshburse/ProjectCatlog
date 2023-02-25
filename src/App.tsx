@@ -20,7 +20,7 @@ function App() {
         <Route path='/' element={ <Home />}/>
         <Route path='/admin/*' element={<DashBoard  />}/>
         <Route path='/login' element={ <LoginPage />}/>
-        <Route path='/Gallery' element={ <ImageGallery />}/>
+        <Route path='/Gallery/:id' element={ <ImageGallery />}/>
         <Route path='/List' element={ <ProductList />}/>
       </Routes>
       
