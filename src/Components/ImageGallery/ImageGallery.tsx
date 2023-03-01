@@ -27,7 +27,7 @@ export default function ImageGallery() {
   useEffect(() => {
     const dbRef = ref(db, '/Image');
 
-    const imgBytype = query(dbRef, orderByChild('stype'),equalTo(id+""));
+    const imgBytype = query(dbRef, orderByChild('stype'),equalTo(id+""|| "Mica Door"));
     // console.log("image by type",imgBytype)
      
     // console.log("current id",currentID)
