@@ -7,6 +7,7 @@ import { BrowserRouter,Route,Routes } from "react-router-dom";
 import Home from './Components/Home/Home';
 import DashBoard from './AdminComponent/DashBoard/DashBoard';
 import ImageGallery from './Components/ImageGallery/ImageGallery';
+import CreateAccount from './Components/create-account/create-account';
 import ProductList from './Components/ProductList/ProductList';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
         <Route path='/' element={ <Home />}/>
         <Route path='/admin/*' element={<DashBoard  />}/>
         <Route path='/login' element={ <LoginPage />}/>
+        <Route path='/Gallery' element={ <ImageGallery />}/>
+        <Route path='/CreateAccount' element={ <CreateAccount />}/>
+
         <Route path='/Gallery/:id' element={ <ImageGallery />}/>
         <Route path='/List' element={ <ProductList />}/>
       </Routes>
