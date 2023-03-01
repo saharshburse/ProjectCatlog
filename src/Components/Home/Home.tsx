@@ -13,6 +13,9 @@ const Home: React.FC<Props> = () => {
       <Link to="/login">
         <button>LOGIN PAGE</button>
       </Link>
+      <Link to="/CreateAccount">
+        <button>Create Account</button>
+      </Link>
       <Link to="/Gallery">
         <button>Gallery</button>
       </Link>
