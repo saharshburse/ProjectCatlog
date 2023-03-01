@@ -2,29 +2,38 @@ import React, { useEffect, useState } from 'react'
 import './ImageGallery.css'
 import Card from '../Card/Card'
 import { db } from "./../../firebase";
-import { onValue, ref } from 'firebase/database';
+import { equalTo, onValue, orderByChild, query, ref } from 'firebase/database';
+import { useParams } from 'react-router-dom';
 
 export default function ImageGallery() {
 
-
+  let { id } = useParams();
+  // const [currentID,setcurrentID]=useState("");
 
   const [Img, setImg] = useState([{
     url:"",
     name:"",
   }])
+ 
+
+  
+  
+   
   // const [name, setName] = useState<string[]>([])
     
   // ============================FireBase===================================
 
   //read
   useEffect(() => {
-
-
     const dbRef = ref(db, '/Image');
 
-  
-    onValue(dbRef, (snapshot) => {
-
+    const imgBytype = query(dbRef, orderByChild('stype'),equalTo(id+""));
+    // console.log("image by type",imgBytype)
+     
+    // console.log("current id",currentID)
+    // console.log("usersnapshot",snapshot)
+    onValue(imgBytype, (snapshot) => {
+      console.log("usersnapshot",snapshot.val())
       snapshot.forEach((childSnapshot) => {
 
         
@@ -37,7 +46,7 @@ export default function ImageGallery() {
         setImg((pre)=>[...pre,{...arr}])
          console.log('name',childSnapshot.val().stype);
         //  setUrl((types) => [...types, childSnapshot.val().url])
-         console.log('Url',childSnapshot.val().url);
+        //  console.log('Url',childSnapshot.val().url);
       });
 
 
@@ -47,7 +56,7 @@ export default function ImageGallery() {
 
     // console.log(Img);
 
-  }, []);
+  }, [id]);
 
 
 
@@ -67,7 +76,7 @@ export default function ImageGallery() {
           {Img.map((img,index) => {
               return (
                 img.url!==""&&
-                <Card Url={img.url} Name={img.name} />
+                <Card key={index} Url={img.url} Name={img.name} />
               )
             })}
           </div>
