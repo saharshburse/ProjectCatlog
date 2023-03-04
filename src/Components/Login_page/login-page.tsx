@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './login-page.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -33,9 +33,14 @@ const LoginPage = () => {
   };
 
   return (
+    <div>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
     <div className="login-page">
+
       <div className="login-form">
-        <h2>Login</h2>
+        <h2>Admin Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
@@ -48,6 +53,7 @@ const LoginPage = () => {
           <button type="submit" className="btn-login">Login</button>
         </form>
       </div>
+    </div>
     </div>
   );
 };
