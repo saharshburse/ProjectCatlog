@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './login-page.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const navigate = useNavigate()
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
@@ -17,6 +19,17 @@ const LoginPage = () => {
     e.preventDefault();
     console.log('username:', username);
     console.log('password:', password);
+    if(username==="admin@email.com"&& password==="admin@123"){
+      console.log("login sucess");
+      // <Navigate to='/admin'  replace={true} />;
+      localStorage.setItem("authtoken", "true");
+      navigate('/admin');
+    }
+    else{
+      setUsername("");
+      setPassword("");
+      console.log("Incorrect Userid or password");
+    }
   };
 
   return (

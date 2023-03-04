@@ -9,6 +9,7 @@ import DashBoard from './AdminComponent/DashBoard/DashBoard';
 import ImageGallery from './Components/ImageGallery/ImageGallery';
 import CreateAccount from './Components/create-account/create-account';
 import ProductList from './Components/ProductList/ProductList';
+import PrivateRoutes from './AdminComponent/PrivateRoutes/PrivateRoutes';
 
 function App() {
   return (
@@ -19,13 +20,19 @@ function App() {
       </header>
       <Routes >
         <Route path='/' element={ <Home />}/>
-        <Route path='/admin/*' element={<DashBoard  />}/>
+        
         <Route path='/login' element={ <LoginPage />}/>
         <Route path='/Gallery' element={ <ImageGallery />}/>
         <Route path='/CreateAccount' element={ <CreateAccount />}/>
 
         <Route path='/Gallery/:id' element={ <ImageGallery />}/>
         <Route path='/List' element={ <ProductList />}/>
+
+
+        <Route element={<PrivateRoutes/>}>
+             <Route path='/admin/*' element={<DashBoard  />}/>
+        </Route>
+
       </Routes>
       
      
