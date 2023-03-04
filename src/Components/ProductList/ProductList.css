@@ -6,19 +6,35 @@
     justify-content: center;
 
 }
-
+.listmain h1{
+    margin: 1rem 0;
+}
 .listdiv{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     width: 60%;
     gap: 30px;
 }
+.cardlist{
+    width: 100%;
+    /* margin: 0%!important; */
+    margin: 1rem 0;
+    padding: 0%;
+}
 
 /* ================  Try to use something else */
-a{
+.listdiv a{
     text-decoration: none;
     color: black;
-    width: 100%;
+    width: inherit;
+    height: auto;
+    margin: 0%;
+    padding: 0%;
 }/* ================  Try to use something else */
+@media only screen and (max-width: 767px) {
+    .listdiv a{
+        width: 100%;
+    }
+}

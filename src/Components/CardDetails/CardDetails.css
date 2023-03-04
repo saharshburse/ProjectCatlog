@@ -1,14 +1,58 @@
 .Listcard{
     display: flex;
     align-items: flex-start;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-start;
     height: 200px;
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
-    background-color: bisque;
+    /* background-color: bisque; */
     padding: 1em;
     cursor: pointer;
     text-decoration: none;
+    gap: 2rem;
+    /* margin: 1em; */
+}
+.cardimg img{
+    height: auto;
+    width: 9rem;
+}
+.carddetail button{
+    height: 2rem;
+    width: 5rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+
+}
+.carddetail{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    /* margin: 1em; */
+}
+@media only screen and (max-width: 767px) {
+    .cardimg img{
+        height: 100%;
+        width: 4rem;
+    }
+    .Listcard{
+        margin: 0%;
+        padding: 0%;
+        font-size: 10px;
+        height: max-content;
+    }
+    .carddetail {
+        margin: 0%;
+        padding: 0%;
+        font-size: 10px;
+        gap: 10px;
+        /* justify-content: flex-start; */
+
+    }
 }

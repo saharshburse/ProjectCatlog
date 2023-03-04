@@ -61,7 +61,7 @@ export default function ProductList() {
       {List.map((img,index) => {
               return (
                 img.name!==""&&
-               <Link to={`/Gallery/${img.name}`}> <div><CardDetails Name={img.name} Desc={img.desc} /></div></Link> 
+               <Link to={`/Gallery/${img.name}`}> <div className='cardlist'><CardDetails Name={img.name} Desc={img.desc} /></div></Link> 
               )
             })}
       </div>
