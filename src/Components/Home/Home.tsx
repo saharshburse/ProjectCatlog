@@ -2,26 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './Home.css';
 
-interface Props {}
+interface Props { }
 
 const Home: React.FC<Props> = () => {
   return (
-    <div>
-      <Link to="/admin">
-        <button>ADMIN RENDER xD</button>
-      </Link>
-      <Link to="/login">
-        <button>LOGIN PAGE</button>
-      </Link>
-      <Link to="/CreateAccount">
-        <button>Create Account</button>
-      </Link>
-      <Link to="/Gallery">
-        <button>Gallery</button>
-      </Link>
-      <Link to="/List">
-        <button>List</button>
-      </Link>
+    <div className="homemain">
+      <div className="homecontainer">
+        <div><Link to="/list">
+          <button>View Catlog</button>
+        </Link> </div>
+      </div>
     </div>
   );
 };

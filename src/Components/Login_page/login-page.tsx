@@ -34,9 +34,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <Link to="/">
-        <button>Home</button>
-      </Link>
+      
     <div className="login-page">
 
       <div className="login-form">

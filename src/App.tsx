@@ -10,13 +10,15 @@ import ImageGallery from './Components/ImageGallery/ImageGallery';
 import CreateAccount from './Components/create-account/create-account';
 import ProductList from './Components/ProductList/ProductList';
 import PrivateRoutes from './AdminComponent/PrivateRoutes/PrivateRoutes';
+import Navbar from './Components/Navbar/Navbar';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
     <BrowserRouter basename='/ProjectCatlog'>
     <div className="App">
       <header>
-
+        <Navbar/>
       </header>
       <Routes >
         <Route path='/' element={ <Home />}/>
@@ -34,7 +36,9 @@ function App() {
         </Route>
 
       </Routes>
-      
+      <footer>
+        <Footer/>
+      </footer>
      
     </div>
     </BrowserRouter>
