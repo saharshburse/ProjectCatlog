@@ -71,6 +71,12 @@
 
 @media only screen and (max-width: 767px) {
     .login-form {
-        width: 100%;
+        width: 70%;
+    }
+    .form-group label {
+        font-size: 1em;
+    }
+    .form-group input {
+        font-size: 1em;
     }
 }

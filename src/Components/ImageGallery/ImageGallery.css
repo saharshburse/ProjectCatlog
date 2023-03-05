@@ -13,7 +13,9 @@
     justify-content: flex-start;
     width: 80%;
     height: 100%;
-    background-color: rgb(1, 122, 82);
+    /* background-color: rgb(1, 122, 82); */
+    margin: 2em;
+    gap: 2em;
 
 }
 .G_div{
@@ -23,7 +25,7 @@
     flex-direction: row;
     gap: 30px;
     width: 100%;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     flex-wrap: wrap;
 
 }

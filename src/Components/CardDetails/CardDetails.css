@@ -55,4 +55,9 @@
         /* justify-content: flex-start; */
 
     }
+    .carddetail button{
+        width: 3.5rem;
+        height: 1.5rem;
+        font-size: 10px;
+    }
 }

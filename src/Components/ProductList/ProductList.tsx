@@ -18,7 +18,7 @@ export default function ProductList() {
   //read
   useEffect(() => {
 
-
+    setList([]);
     const dbRef = ref(db, '/Type');
 
   

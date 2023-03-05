@@ -22,7 +22,7 @@ export default function Navbar() {
                     <img src={menu} alt="menu" />
                 </div>
 
-                <div className={`nav-elements  ${showNavbar && 'active'} navbar`}>
+                <div className={`nav-elements  ${showNavbar && 'active'} navbar`} onClick={handleShowNavbar}>
 
                     <ul>
                         <li>
