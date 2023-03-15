@@ -28,7 +28,7 @@ function App() {
         <Route path='/CreateAccount' element={ <CreateAccount />}/>
 
         <Route path='/Gallery/:id' element={ <ImageGallery />}/>
-        <Route path='/List' element={ <ProductList />}/>
+        <Route path='/List' element={ <ProductList />}/> 
 
 
         <Route element={<PrivateRoutes/>}>

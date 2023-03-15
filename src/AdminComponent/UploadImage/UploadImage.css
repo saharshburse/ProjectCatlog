@@ -1,20 +1,280 @@
-.uploadBox{
+.uploadBox {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    background-color: antiquewhite;
-    height: 200px;
-    width: 400px;
+    /* gap: 1rem; */
+    justify-content: space-evenly;
+    background-color: white;
+    height: 15rem;
+    width: 30rem;
+    border-radius: 1em;
+    box-shadow: 0 8px 30px #252525;
+    overflow: hidden;
 }
-.uploadContainer{
+
+.uploadContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    /* background-color: aqua; */
+
 }
-.uploadMain{
-    display: flex;
+
+.uploadMain {
+    /* display: flex;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 80vh; */
+    position: absolute;
+    top: 50%;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.select_type {
+    display: flex;
+    flex-direction: column;
+}
+
+.select_type select {
+    height: 2rem;
+    width: 10rem;
+    text-align: center;
+    border: 1px solid #252525;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+.col_right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.col_r {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.modal_button--upload {
+    --hue: 223;
+    background-color: transparent;
+    border: 0.125rem dashed hsla(var(--hue), 10%, 50%, 0.4);
+    flex: 1;
+    padding: 0.375rem 2rem;
+    cursor: pointer;
+
+
+}
+
+.input input {
+    display: none;
+}
+
+.modal_button {
+    background-color: transparent;
+    border-radius: 0.25rem;
+    font-size: 0.75em;
+    padding: 0.5rem 2rem;
+    transition:
+        background-color var(--trans-dur),
+        border-color var(--trans-dur),
+        opacity var(--trans-dur);
+    width: 100%;
+    /* display: none; */
+    cursor: pointer;
+    margin: 0%;
+}
+
+.up_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.deactive {
+    display: none;
+}
+
+.modal_content>* {
+    /* don’t use shorthand syntax, or actions delay will be overridden */
+    animation-name: fadeSlideIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.modal_message,
+.modal_progress-value {
+    color: hsl(var(--hue), 10%, 30%);
+    transition: color var(--trans-dur);
+}
+
+
+.modal_message {
+    animation-delay: 0.1s;
+    font-size: 1em;
+    margin-bottom: 1.5em;
+    min-height: 3em;
+}
+
+.modal_progress {
+    flex: 1;
+}
+
+.modal_progress+.modal_button {
+    margin-top: 1.75em;
+}
+
+.modal_progress-bar {
+    background-image: linear-gradient(90deg, hsl(var(--hue), 90%, 50%), hsl(var(--hue), 90%, 70%));
+    border-radius: 0.2em;
+    overflow: hidden;
+    width: 100%;
+    height: 0.4em;
+    transform: translate3d(0, 0, 0);
+}
+
+.modal_progress-fill {
+    background-color: hsl(var(--hue), 10%, 90%);
+    width: inherit;
+    height: inherit;
+    transition: transform 0.1s ease-in-out;
+}
+
+.modal_progress-value {
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1.333;
+    text-align: right;
+}
+
+.modal_title {
+    font-size: 1.25em;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.modal_actions {
+    animation-delay: 0.2s;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modal_icon {
+    display: block;
+    margin: auto;
+    width: 2.25em;
+    height: 2.25em;
+}
+
+.modal_icon--blue g {
+    stroke: hsl(223, 90%, 50%);
+}
+
+.modal_icon--red g {
+    stroke: hsl(3, 90%, 50%);
+}
+
+.modal_icon--green g {
+    stroke: hsl(138, 90%, 40%);
+}
+
+.modal_icon circle,
+.modal_icon line,
+.modal_icon polyline {
+    animation: sdo 0.25s ease-in-out forwards;
+    transition: stroke var(--trans-dur);
+}
+
+.modal_icon :nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.modal_icon :nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.modal_icon-sdo10 {
+    stroke-dashoffset: 10;
+}
+
+.modal_icon-sdo14 {
+    stroke-dashoffset: 14.2;
+}
+
+.modal_icon-sdo69 {
+    stroke-dashoffset: 69.12;
+    transform: rotate(-90deg);
+    transform-origin: 12px 12px;
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(33%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sdo {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+
+/* Beyond mobile */
+@media only screen and (max-width: 767px) {
+    .modal_actions--center {
+        justify-content: center;
+        align-items: center;
+        /* margin-left: -4.125em; */
+    }
+
+    .modal_body {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .modal_button {
+        width: auto;
+    }
+
+
+   
+    .modal_title {
+        text-align: left;
+    }
+
+    .uploadBox {
+        width: 17rem !important;
+        flex: 1;
+        flex-shrink: 1;
+        flex-direction: column;
+        justify-content: center;
+        padding:0.5em 0.5em;
+        /* align-items: center; */
+    }
 }
