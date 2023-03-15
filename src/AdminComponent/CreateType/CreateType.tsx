@@ -5,49 +5,56 @@ import React, { useState } from 'react'
 import './CreateType.css'
 export default function CreateType() {
 
-    const [name,setname]=useState("")
-    const [desc,setDesc]=useState("")
-    
-    const uuid = uid();
+  const [name, setname] = useState("")
+  const [desc, setDesc] = useState("")
+
+  const uuid = uid();
 
 
-      // ============================FireBase===================================
-    
+  // ============================FireBase===================================
+
   // const handleTodoChange = (e) => {
   //   setTodo(e.target.value);
   // };
-    //write
-    const writeToDatabase = () => {
+  //write
+  const writeToDatabase = () => {
 
-      
-        set(ref(db, `Type/${uuid}`), {
-          desc,
-          uuid,
-          name
-        });
-        console.log("sucess");
-    
-        // setImgurl("");
-      };
-  
-  
-  
-  
-    
-    // ============================FireBase===================================
+
+    set(ref(db, `Type/${uuid}`), {
+      desc,
+      uuid,
+      name
+    });
+    console.log("sucess");
+
+    // setImgurl("");
+  };
+
+
+
+
+
+  // ============================FireBase===================================
   return (
-      <div className='typemain'>
-          <div className='typecontainer'>
-              <h1>Create Type</h1>
-              <form action="" className='typeform'>
-                  <label>Type</label>
-                  <input type="text" value={name} onChange={(e)=>{setname(e.target.value) }} placeholder='Type Name' />
-                  <label>Description</label>
-                  <textarea name="desc" value={desc} onChange={(e)=>{setDesc(e.target.value) }} id=""></textarea>
-                  <button onClick={writeToDatabase}>ADD</button>
+    <div className='typemain'>
+      <div className='typecontainer'>
+        <h1>Create Type</h1>
+        <form action="" className='typeform'>
 
-              </form>
+          <label>Type</label>
+          <input type="text" value={name} onChange={(e) => { setname(e.target.value) }} placeholder='  Type Name' className=" " />
+
+
+          <label >Description</label>
+          <textarea name="desc" value={desc} onChange={(e) => { setDesc(e.target.value) }} id="" className="input_text"></textarea>
+
+          <div className="btn_div">
+            <button onClick={writeToDatabase} className='add_btn'>ADD</button>
+
           </div>
+
+        </form>
       </div>
+    </div>
   )
 }
