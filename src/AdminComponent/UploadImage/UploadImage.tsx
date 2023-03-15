@@ -155,11 +155,14 @@ const success=()=> {
 //   // 👇️ get number between min (inclusive) and max (inclusive)
 //   return Math.floor(Math.random() * (max - min + 1)) + min;
 // }
-let  progressTimeout = null;
+let  progressTimeout: NodeJS.Timeout | null = null;
 async function progressLoop() {
     progressDisplay();
-console.log('upload',isUploading);
-console.log('progress',progress);
+// console.log('upload',isUploading);
+// console.log('progress',progress);
+if(progressTimeout===null){
+  // console.log('progress',progress);
+}
     if (isUploading) {
         if (progress === 0) {
             await new Promise(res => setTimeout(res, 1000));
