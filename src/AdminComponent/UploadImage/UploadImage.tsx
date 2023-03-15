@@ -18,7 +18,7 @@ export default function UploadImage() {
 // const [progress, setProgress] = useState(0);
 let progress=0;
 let isUploading=false;
-let  progressTimeout = null;
+
   const uuid = uid();
 
 
@@ -155,6 +155,7 @@ const success=()=> {
 //   // 👇️ get number between min (inclusive) and max (inclusive)
 //   return Math.floor(Math.random() * (max - min + 1)) + min;
 // }
+let  progressTimeout = null;
 async function progressLoop() {
     progressDisplay();
 console.log('upload',isUploading);
@@ -246,8 +247,8 @@ console.log('progress',progress);
 
             <div id='up_btn' className='model_content up_btn deactive'>
               <h5>{filename}</h5>
-              {/* <button className='modal_button' onClick={submitImage}>Upload</button> */}
-              <button className='modal_button' onClick={onUpload}>Upload</button>
+              <button className='modal_button' onClick={submitImage}>UploadDB</button>
+              <button className='modal_button' onClick={onUpload}>UploadT</button>
               <button className='modal_button' onClick={cancelUpload}>Cancel</button>
             </div>
 
