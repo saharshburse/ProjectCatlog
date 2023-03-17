@@ -12,6 +12,14 @@ import ProductList from './Components/ProductList/ProductList';
 import PrivateRoutes from './AdminComponent/PrivateRoutes/PrivateRoutes';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
+//theme
+import "primereact/resources/themes/lara-light-indigo/theme.css";     
+    
+//core
+import "primereact/resources/primereact.min.css";
+
+//icons
+import "primeicons/primeicons.css";    
 
 function App() {
   return (

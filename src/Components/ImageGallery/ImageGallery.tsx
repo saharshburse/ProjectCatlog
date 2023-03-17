@@ -8,11 +8,12 @@ import { useParams } from 'react-router-dom';
 export default function ImageGallery() {
 
   let { id } = useParams();
-  ;
+  
 
   const [Img, setImg] = useState([{
     url: "",
     name: "",
+    public_id :"",
   }])
 
 
@@ -40,7 +41,8 @@ export default function ImageGallery() {
 
         let arr = {
           url: childSnapshot.val().url,
-          name: childSnapshot.val().stype
+          name: childSnapshot.val().stype,
+          public_id: childSnapshot.val().public_id
 
         }
         setImg((pre) => [...pre, { ...arr }])
@@ -56,20 +58,24 @@ export default function ImageGallery() {
 
     // console.log(Img);
 
-  }, [id]);
+  }, []);
 
 
 
 
   // ============================FireBase===================================
-
-
-
+  let auth_token = localStorage.getItem('authtoken');
+ 
   return (
 
     <div className='G_main'>
       <div className='G_container'>
-        <h1>Image Gallery</h1>
+        <h1>Image Gallery</h1>   
+        {auth_token=== 'true' &&
+        <h4 style={{color:'red'}}>
+          Admin Edit Mode..!!!
+        </h4>
+      }
         <h5>Available Designs</h5>
         <div className='G_div'>
 
@@ -77,7 +83,7 @@ export default function ImageGallery() {
           {Img.map((img, index) => {
             return (
               img.url !== "" &&
-              <Card key={index} Url={img.url} Name={img.name +'-'+index} />
+              <Card key={index} public_id={img.public_id} Url={img.url} Name={img.name +'-'+index} stype={img.name} />
             )
           })}
         </div>

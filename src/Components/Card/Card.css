@@ -1,4 +1,4 @@
-.card{
+.card1{
     width: 15rem;
     height: 25rem;
     border: 1px solid black;
@@ -21,9 +21,30 @@
     text-transform: uppercase;
     color: black;
 }
+.card1 .del_icon{
+    position:absolute;
+    text-align: center;
+    /* vertical-align: middle; */
+    background-color: white;
+    color: red;
+    border-radius: 5px;
+    /* left: 10rem; */
+    margin-top: 1.5rem;
+    /* margin-left: 10%; */
+    height: 2.2rem;
+    width: 2.2rem;
+    cursor: pointer;
+    font-size: 26px;
+}
+.del_div{
+    position: absolute;
+    text-align: end;
+    margin-left: 10%;
+    /* display: ; */
+}
 
 @media only screen and (max-width: 767px) {
-    .card{
+    .card1{
         width: 12rem;
         height: 18rem;
     

@@ -24,6 +24,7 @@ let isUploading=false;
 
   // ===============================Cloudinary=================================== 
   const dataapi = "https://api.cloudinary.com/v1_1/dldfmckou/image/upload";
+
   const submitImage = () => {
     const data = new FormData()
     data.append("file", image)
@@ -41,27 +42,30 @@ let isUploading=false;
       .then((data) => {
         console.log(data);
         console.log(data['secure_url']);
-        writeToDatabase(data['secure_url']);
+        writeToDatabase(data['secure_url'],data['public_id']);
         setImage("");
 
       }).catch((err) => {
         console.log(err);
       })
-  }
 
+      onUpload();
+  }
+  
   // ===============================Cloudinary===================================
 
 
   // ============================FireBase===================================
 
   //write
-  const writeToDatabase = (url: string) => {
+  const writeToDatabase = (url: string,public_id:string) => {
 
 
     set(ref(db, `Image/${uuid}`), {
       url,
       uuid,
-      stype
+      stype,
+      public_id
     });
 
 
@@ -125,6 +129,7 @@ let isUploading=false;
   }
 
   const onUpload = () => {
+  
     document.getElementById('up_btn')?.classList.add('deactive');
     document.getElementById('uploading')?.classList.remove('deactive');
     isUploading=true;
@@ -165,7 +170,7 @@ if(progressTimeout===null){
 }
     if (isUploading) {
         if (progress === 0) {
-            await new Promise(res => setTimeout(res, 1000));
+            await new Promise(res => setTimeout(res, 500));
             // fail randomly
             // if (!isUploading) {
             //     return;
@@ -178,7 +183,7 @@ if(progressTimeout===null){
         if (progress < 0.9) {
             // setProgress(progress+0.1);
             progress+=0.1;
-          progressTimeout = setTimeout(progressLoop, 50);
+          progressTimeout = setTimeout(progressLoop, 30);
         } else if (progress >= 0.9) {
           progress=1;
           progressTimeout = setTimeout(() => {
@@ -187,7 +192,7 @@ if(progressTimeout===null){
                     // this.stateDisplay();
                     progressTimeout = null;
                 }
-            }, 250);
+            }, 150);
         }
     }
 }
@@ -251,7 +256,7 @@ if(progressTimeout===null){
             <div id='up_btn' className='model_content up_btn deactive'>
               <h5>{filename}</h5>
               <button className='modal_button' onClick={submitImage}>UploadDB</button>
-              <button className='modal_button' onClick={onUpload}>UploadT</button>
+              <button className='modal_button' onClick={onUpload}>Upload</button>
               <button className='modal_button' onClick={cancelUpload}>Cancel</button>
             </div>
 
