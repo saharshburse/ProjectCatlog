@@ -73,7 +73,7 @@ export default function Card(props:Image_card) {
   return (
     <div className='card1'>
    
-       
+       {auth_token==='true'  &&
         <div className='del_div'>
         <Toast ref={toast} />
             <ConfirmDialog />
@@ -81,7 +81,7 @@ export default function Card(props:Image_card) {
             <span className='del_icon' onClick={confirm2}><i className='far fa-trash-alt'></i></span>
             
         </div>
-        
+        }
         <img className='card_img' src={props.Url} alt="door" />
         <div className='card_p'>{props.Name}</div>
 
