@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/ProjectCatlog/static/css/main.c0748d55.css",
-    "main.js": "/ProjectCatlog/static/js/main.9a31b1e6.js",
+    "main.css": "/ProjectCatlog/static/css/main.be800804.css",
+    "main.js": "/ProjectCatlog/static/js/main.91450a05.js",
     "static/js/787.28cb0dcd.chunk.js": "/ProjectCatlog/static/js/787.28cb0dcd.chunk.js",
+    "static/media/primeicons.svg": "/ProjectCatlog/static/media/primeicons.e1441b135b3ca9ad643c.svg",
+    "static/media/primeicons.eot": "/ProjectCatlog/static/media/primeicons.d44157bdfa026dc877af.eot",
+    "static/media/primeicons.woff": "/ProjectCatlog/static/media/primeicons.10d3152104f2208ac82a.woff",
+    "static/media/primeicons.ttf": "/ProjectCatlog/static/media/primeicons.ea5358601d0a3fd6670b.ttf",
+    "static/media/primeicons.woff2": "/ProjectCatlog/static/media/primeicons.78172950b335ccdb94e2.woff2",
     "index.html": "/ProjectCatlog/index.html",
-    "main.c0748d55.css.map": "/ProjectCatlog/static/css/main.c0748d55.css.map",
-    "main.9a31b1e6.js.map": "/ProjectCatlog/static/js/main.9a31b1e6.js.map",
+    "main.be800804.css.map": "/ProjectCatlog/static/css/main.be800804.css.map",
+    "main.91450a05.js.map": "/ProjectCatlog/static/js/main.91450a05.js.map",
     "787.28cb0dcd.chunk.js.map": "/ProjectCatlog/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0748d55.css",
-    "static/js/main.9a31b1e6.js"
+    "static/css/main.be800804.css",
+    "static/js/main.91450a05.js"
   ]
 }
