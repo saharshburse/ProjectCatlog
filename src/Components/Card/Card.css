@@ -33,16 +33,20 @@
     /* margin-left: 10%; */
     height: 2.2rem;
     width: 2.2rem;
+    padding: 3px;
     cursor: pointer;
-    font-size: 26px;
+    /* font-size: 10px; */
 }
 .del_div{
     position: absolute;
     text-align: end;
-    margin-left: 10%;
+    margin-left: 8%;
     /* display: ; */
 }
-
+.del_i{
+    background-color: transparent;
+    display: none;
+}
 @media only screen and (max-width: 767px) {
     .card1{
         width: 12rem;

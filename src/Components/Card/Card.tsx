@@ -6,7 +6,7 @@ import { db } from '../../firebase';
 import './Card.css'
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import { Toast } from 'primereact/toast';
-
+import del from './../../Assets/del.png'
 
 
 
@@ -69,16 +69,27 @@ export default function Card(props:Image_card) {
         reject
     });
 };
+
+// const check=()=>{
+
+// if(auth_token==='true'){
+//   document.getElementById('del')?.classList.remove('del_i');
+//   return 'true'
+// }
+// document.getElementById('del')?.classList.add('del_i');
+   
+//  return 'false'
+// }
  
   return (
     <div className='card1'>
    
        {auth_token==='true'  &&
-        <div className='del_div'>
+        <div id ='del'className='del_div'>
         <Toast ref={toast} />
             <ConfirmDialog />
                          
-            <span className='del_icon' onClick={confirm2}><i className='far fa-trash-alt'></i></span>
+            <img className='del_icon' onClick={confirm2} src={del} alt="del" />
             
         </div>
         }
