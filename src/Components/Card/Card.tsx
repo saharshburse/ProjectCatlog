@@ -1,6 +1,6 @@
 import { ref, remove } from 'firebase/database';
-import React, { useEffect, useState  , useRef } from 'react'
-import { Navigate} from 'react-router-dom';
+import React, {  useRef } from 'react'
+// import { Navigate} from 'react-router-dom';
 import { db } from '../../firebase';
 
 import './Card.css'

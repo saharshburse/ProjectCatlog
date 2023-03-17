@@ -4,7 +4,7 @@ import CreateType from '../CreateType/CreateType'
 import UploadImage from '../UploadImage/UploadImage'
 import { useNavigate } from 'react-router-dom';
 import './DashBoard.css'
-import ProductList from '../../Components/ProductList/ProductList';
+// import ProductList from '../../Components/ProductList/ProductList';
 // import UploadFile from '../UploadFile/UploadFile';
 export default function DashBoard() {
   const navigate = useNavigate()
