@@ -26,7 +26,13 @@ let isUploading=false;
   const dataapi = "https://api.cloudinary.com/v1_1/dldfmckou/image/upload";
 
   const submitImage = () => {
-    const data = new FormData()
+
+    // let filesubname=filename.split('.');
+    // console.log('filename=',filename,"subname",filesubname);
+    // setFilename(filesubname[0]);
+
+
+    const data = new FormData() 
     data.append("file", image)
     data.append("upload_preset", "my_preset")
     data.append("cloud_name", "dldfmckou")
@@ -65,7 +71,8 @@ let isUploading=false;
       url,
       uuid,
       stype,
-      public_id
+      public_id,
+      filename
     });
 
 
@@ -120,6 +127,7 @@ let isUploading=false;
   }
 
   const doUpload = () => {
+ 
     document.getElementById('inputdiv')?.classList.add('deactive');
     document.getElementById('up_btn')?.classList.remove('deactive');
   }

@@ -79,5 +79,9 @@
         
         height: 50px;
     }
+    .typecontainer{
+        top: 50%;
+
+    }
     
 }

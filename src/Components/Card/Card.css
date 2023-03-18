@@ -60,7 +60,12 @@
     .card_p{
         font-size: 14px;
     }
-    
+    .card1 .del_icon{
+            height: 1.8rem;
+            width: 1.8rem;
+    }
 
-
+.del_div{
+    margin-left: 14%;
+}
 }

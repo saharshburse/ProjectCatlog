@@ -1,13 +1,13 @@
 import { ref, remove } from 'firebase/database';
-import React, {  useRef } from 'react'
-// import { Navigate} from 'react-router-dom';
+import React, {  useCallback, useRef } from 'react'
+import { Navigate} from 'react-router-dom';
 import { db } from '../../firebase';
 
 import './Card.css'
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import { Toast } from 'primereact/toast';
 import del from './../../Assets/del.png'
-
+// import ImageGallery from '../ImageGallery/ImageGallery';
 
 
 
@@ -17,12 +17,18 @@ interface Image_card{
     Name:string;
     public_id:string;
     stype:string;
+    onStateChange:any;
+    
     
 }
 
 export default function Card(props:Image_card) {
 
 
+
+  const handleParentChange = useCallback(() => {
+    props.onStateChange();
+  }, [props])
 
 
   const DeleteDB = (public_id:string) => {
@@ -31,8 +37,9 @@ export default function Card(props:Image_card) {
     // console.log(id,uuid[2]);
     // setId(uuid[2]);
     remove(ref(db, `Image/${uuid[2]}`));
-    // <Navigate to={'/Gallery/' + props.stype }/>
-    window.location.reload();
+    <Navigate to={'/List'}/>
+    // <Navigate to={'Gallery/'+props.stype}/>
+    // window.location.reload();
 
   };
 
@@ -52,6 +59,10 @@ export default function Card(props:Image_card) {
   const accept = () => {
       toast.current?.show({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted', life: 3000 });
       handledelete(props.public_id); 
+      handleParentChange();
+
+    
+
   }
 
   const reject = () => {
@@ -90,6 +101,7 @@ export default function Card(props:Image_card) {
             <ConfirmDialog />
                          
             <img className='del_icon' onClick={confirm2} src={del} alt="del" />
+            
             
         </div>
         }

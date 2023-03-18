@@ -16,15 +16,18 @@ export default function ImageGallery() {
     public_id :"",
   }])
 
+const [state, setState] = useState(0);
 
 
-
-
+const updateState=()=>{
+  setState(state+1);
+}
 
   // ============================FireBase===================================
 
   //read
   useEffect(() => {
+    // renderGallery();
     setImg([]);
     const dbRef = ref(db, '/Image');
 
@@ -58,6 +61,7 @@ export default function ImageGallery() {
 
     // console.log(Img);
 
+
   }, [id]);
 
 
@@ -83,7 +87,7 @@ export default function ImageGallery() {
           {Img.map((img, index) => {
             return (
               img.url !== "" &&
-              <Card key={index} public_id={img.public_id} Url={img.url} Name={img.name +'-'+index} stype={img.name} />
+              <Card key={index} public_id={img.public_id} Url={img.url} Name={img.name +'-'+index} stype={img.name} onStateChange={updateState}/>
             )
           })}
         </div>

@@ -13,13 +13,13 @@ const LoginPage = () => {
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
-  };
+  }; 
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('username:', username);
     console.log('password:', password);
-    if(username==="admin@email.com"&& password==="admin@123"){
+    if(username==="admin"&& password==="admin@123"){
       console.log("login sucess");
       // <Navigate to='/admin'  replace={true} />;
       localStorage.setItem("authtoken", "true");

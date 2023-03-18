@@ -277,4 +277,8 @@
         padding:0.5em 0.5em;
         /* align-items: center; */
     }
+    .uploadMain {
+        position: absolute;
+        top: 50%;
+    }
 }
