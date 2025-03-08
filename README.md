@@ -10,7 +10,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 
-link: https://sah642.github.io/ProjectCatlog
+link: https://saharshburse.github.io/ProjectCatlog
 
 FIrebase:https://console.firebase.google.com/project/gallery-8bea0
 Cloudinary:https://console.cloudinary.com/pm/c-31ffa3ff5ae686a7a7fde042e361ce/media-explorer
